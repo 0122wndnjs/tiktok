@@ -6,7 +6,7 @@ import { HiVolumeUp, HiVolumeOff } from "react-icons/hi";
 import { BsPlay, BsFillPlayFill, BsFillPauseFill } from "react-icons/bs";
 import { GoVerified } from "react-icons/go";
 
-import { Video } from "./../types";
+import { Video } from "../types";
 
 interface IProps {
   post: Video;
@@ -32,7 +32,7 @@ const VideoCard: NextPage<IProps> = ({ post }) => {
     if (videoRef?.current) {
       videoRef.current.muted = isVideoMuted;
     }
-  }, [isVideoMuted])
+  }, [isVideoMuted]);
 
   return (
     <div className="flex flex-col border-b-2 border-gray-200 pb-6">
@@ -56,7 +56,7 @@ const VideoCard: NextPage<IProps> = ({ post }) => {
             <Link href={`/profile/${post.postedBy._id}`}>
               <div className="flex items-center gap-2">
                 <p className="flex gap-2 items-center md:text-md font-bold text-primary">
-                  {post.postedBy.userName} {``}
+                  {post.postedBy.userName} {` `}
                   <GoVerified className="text-blue-400 text-md" />
                 </p>
                 <p className="capitalize font-medium text-xs text-gray-500 hidden md:block">

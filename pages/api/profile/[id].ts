@@ -18,10 +18,14 @@ export default async function handler(
     const userVideosQuery = userCreatedPostsQuery(id);
     const userLikedVideosQuery = userLikedPostsQuery(id);
 
-    const user = await client.fetch(query);
-    const userVideos = await client.fetch(userVideosQuery);
-    const userLikedVideos = await client.fetch(userLikedVideosQuery);
+    try {
+      const user = await client.fetch(query);
+      const userVideos = await client.fetch(userVideosQuery);
+      const userLikedVideos = await client.fetch(userLikedVideosQuery);
 
-    res.status(200).json({ user: user[0], userVideos, userLikedVideos });
+      res.status(200).json({ user: user[0], userVideos, userLikedVideos });
+    } catch (error) {
+      console.log(error);
+    }
   }
 }

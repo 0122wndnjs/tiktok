@@ -92,14 +92,14 @@ const Detail = ({ postDetails }: IProps) => {
             ></video>
           </div>
           <div className="absolute top-[45%] left-[45%] cursor-pointer">
-            {playing && (
-              <button onClick={() => {}}>
+            {!playing && (
+              <button onClick={onVideoClick}>
                 <BsFillPlayFill className="text-white text-6xl lg:text-8xl" />
               </button>
             )}
           </div>
         </div>
-        <div className="absolute bottom-5 lg:bottom-10 right-0 lg:right-10 cursor-pointer">
+        <div className="absolute bottom-5 lg:bottom-10 right-5 lg:right-10 cursor-pointer">
           {isVideoMuted ? (
             <button onClick={() => setIsVideoMuted(false)}>
               <HiVolumeOff className="text-white text-2xl lg:text-4xl" />
@@ -132,7 +132,7 @@ const Detail = ({ postDetails }: IProps) => {
               <Link href="/">
                 <div className="mt-3 flex flex-col gap-2">
                   <p className="flex gap-2 items-center md:text-md font-bold text-primary">
-                    {post.postedBy.userName} {``}
+                    {post.postedBy.userName} {` `}
                     <GoVerified className="text-blue-400 text-md" />
                   </p>
                   <p className="capitalize font-medium text-xs text-gray-500 hidden md:block">
@@ -156,8 +156,8 @@ const Detail = ({ postDetails }: IProps) => {
             comment={comment}
             setComment={setComment}
             addComment={addComment}
-            isPostingComment={isPostingComment}
             comments={post.comments}
+            isPostingComment={isPostingComment}
           />
         </div>
       </div>

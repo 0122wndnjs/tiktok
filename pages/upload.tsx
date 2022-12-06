@@ -116,8 +116,8 @@ const Upload = () => {
                     <input
                       type="file"
                       name="upload-video"
+                      onChange={uploadVideo}
                       className="w-0 h-0"
-                      onChange={(e) => uploadVideo(e)}
                     />
                   </label>
                 )}
@@ -146,7 +146,7 @@ const Upload = () => {
             {topics.map((topic) => (
               <option
                 key={topic.name}
-                className="outline-none bg-white capitalize text-gray-700 text-md p-2 hover:bg-slate-300"
+                className="outline-none capitalize bg-white text-gray-700 text-md p-2 hover:bg-slate-300"
                 value={topic.name}
               >
                 {topic.name}

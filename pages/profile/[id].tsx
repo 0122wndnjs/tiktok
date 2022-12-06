@@ -45,7 +45,7 @@ const Profile = ({ data }: IProps) => {
           />
         </div>
         <div className="flex flex-col justify-center">
-          <p className="text-2xl tracking-wider flex gap-1 items-center justify-center text-md font-bold text-primary lowercase">
+          <p className="md:text-2xl tracking-wider flex gap-1 items-center justify-center text-md font-bold text-primary lowercase">
             {user.userName.replaceAll(" ", "")}
             <GoVerified className="text-blue-400" />
           </p>
@@ -76,7 +76,7 @@ const Profile = ({ data }: IProps) => {
             ))
           ) : (
             <NoResults
-              text={`No ${showUserVideos ? "" : "liked"} Videos Yet`}
+              text={`No ${showUserVideos ? "" : "Liked"} Videos Yet`}
             />
           )}
         </div>
@@ -85,7 +85,7 @@ const Profile = ({ data }: IProps) => {
   );
 };
 
-export const getServersideProps = async ({
+export const getServerSideProps = async ({
   params: { id },
 }: {
   params: { id: string };
